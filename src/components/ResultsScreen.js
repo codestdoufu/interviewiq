@@ -60,6 +60,18 @@ function ResultsScreen({
 
   const ringColor = useMemo(() => getRingColor(overallScore), [overallScore]);
   const showConfetti = overallScore >= 7;
+  const congratsText =
+    overallScore >= 7
+      ? 'Great job! 🎯'
+      : overallScore >= 4
+      ? 'Good effort! Keep practicing.'
+      : 'Keep going! Practice makes perfect.';
+  const congratsClass =
+    overallScore >= 7
+      ? 'results-congrats-gradient'
+      : overallScore >= 4
+      ? 'results-congrats-amber'
+      : 'results-congrats-muted';
 
   useEffect(() => {
     if (!showToast) {
@@ -89,6 +101,7 @@ function ResultsScreen({
 
   return (
     <section className="results-screen">
+      <div className="results-bg-glow" aria-hidden="true" />
       <div className="card results-card">
         {showConfetti ? (
           <div className="confetti-wrap" aria-hidden="true">
@@ -99,6 +112,7 @@ function ResultsScreen({
         ) : null}
 
         <h2>Your Interview Report</h2>
+        <p className={`results-congrats ${congratsClass}`}>{congratsText}</p>
 
         <div className="results-top">
           <div className="score-ring-wrap">
@@ -127,7 +141,7 @@ function ResultsScreen({
         {summary ? (
           <>
             <div className="results-columns">
-              <div>
+              <div className="results-section-card">
                 <h3>Your strengths</h3>
                 <ul className="strengths-list">
                   {summary.strengths.map((item, index) => (
@@ -136,7 +150,7 @@ function ResultsScreen({
                 </ul>
               </div>
 
-              <div>
+              <div className="results-section-card">
                 <h3>Focus areas</h3>
                 <ul className="focus-list">
                   {summary.improvements.map((item, index) => (
@@ -152,11 +166,13 @@ function ResultsScreen({
           <ThinkingState text="Thinking" />
         )}
 
+        <p className="results-stat-line">1 interviews completed today</p>
+
         <div className="results-actions">
           <button className="button-outline button-full" type="button" onClick={onStartNewInterview}>
             Start New Interview
           </button>
-          <button className="button-ghost button-full" type="button" onClick={handleShareScore}>
+          <button className="button-primary button-full" type="button" onClick={handleShareScore}>
             Share your score
           </button>
         </div>

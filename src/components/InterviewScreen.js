@@ -124,6 +124,7 @@ function InterviewScreen({
 
   return (
     <section className="interview-screen">
+      <div className="interview-top-line" aria-hidden="true" />
       <div className="interview-top card">
         <div className="progress-meta">
           <span>
@@ -174,14 +175,20 @@ function InterviewScreen({
 
       <div className="card question-card">
         <div className="question-row">
-          <h3 className="label-caps">Interview question</h3>
+          <p className="question-eyebrow">Interview question</p>
           <span className={`question-timer ${secondsLeft === 0 ? 'question-timer-expired' : ''}`}>
             {formatTime(secondsLeft)}
           </span>
         </div>
 
         {isLoadingQuestion ? (
-          <ThinkingState text="Thinking" />
+          <div className="question-thinking-overlay" aria-live="polite" aria-label="Thinking">
+            <div className="question-thinking-dots" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
         ) : (
           <div key={questionNumber} className="question-enter">
             <p className="question-text">{question}</p>
