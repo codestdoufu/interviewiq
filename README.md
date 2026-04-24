@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# InterviewIQ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AI-powered mock interview coach for college students.
 
-## Available Scripts
+Live app: https://interviewiq-mauve.vercel.app
 
-In the project directory, you can run:
+## What it does
 
-### `npm start`
+InterviewIQ simulates real job interviews tailored to your exact role and company. Enter a job title and company name, choose your interview type, and the AI generates 5 realistic questions specific to that company. After each answer you get an instant score out of 10, a specific strength, and one actionable improvement. At the end you receive a full performance report with overall score, strengths, focus areas, and a personalized summary.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Company-specific questions for Google, Meta, Amazon, Microsoft and more
+- Technical, Behavioral, and Mixed interview modes
+- Per-answer AI scoring with green/amber/red feedback
+- STAR-format coaching for behavioral interviews
+- Built-in 3-minute countdown timer per question
+- Question history pills showing your score progression
+- Animated results report with score ring
+- Shareable score card
+- Fully responsive dark-mode UI
+- Ctrl+Enter shortcut to submit answers
 
-### `npm test`
+## Built with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- OpenAI API (gpt-4o-mini)
+- CSS animations
+- Vercel (deployment)
+- OpenAI Codex (built using the Codex Creator Challenge)
 
-### `npm run build`
+## Running locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone the repo and install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+git clone https://github.com/codestdoufu/interviewiq.git
+cd interviewiq
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create a .env file in the root folder:
 
-### `npm run eject`
+REACT_APP_OPENAI_API_KEY=your_openai_api_key_here
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Start the app:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open http://localhost:3000 in your browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Built for
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+OpenAI x Handshake Codex Creator Challenge 2026
